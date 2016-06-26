@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{557813FB-7565-44D5-9335-E35E9924980D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pulsar</RootNamespace>
+    <AssemblyName>Pulsar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\AudioEngineException.cs" />
+    <Compile Include="Audio\AudioManager.cs" />
+    <Compile Include="Audio\PlayList.cs" />
+    <Compile Include="Audio\Song.cs" />
+    <Compile Include="Content\ContentLoadException.cs" />
+    <Compile Include="Content\ContentManager.cs" />
+    <Compile Include="Content\ContentResolver.cs" />
+    <Compile Include="Content\PackageType.cs" />
+    <Compile Include="Content\Resolvers\AudioCfgContentResolver.cs" />
+    <Compile Include="Content\Resolvers\CultureContentResolver.cs" />
+    <Compile Include="Content\Resolvers\FontContentResolver.cs" />
+    <Compile Include="Content\Resolvers\GameCfgContentResolver.cs" />
+    <Compile Include="Content\Resolvers\GraphicsCfgContentResolver.cs" />
+    <Compile Include="Content\Resolvers\HotKeyCfgContentResolver.cs" />
+    <Compile Include="Content\Resolvers\PlayListContentResolver.cs" />
+    <Compile Include="Content\Resolvers\SoundContentResolver.cs" />
+    <Compile Include="Content\Resolvers\SpriteSheetResolver.cs" />
+    <Compile Include="Content\Resolvers\TextureContentResolver.cs" />
+    <Compile Include="Content\Resolvers\PackageResolver.cs" />
+    <Compile Include="Content\Package.cs" />
+    <Compile Include="Core\Commands\CommandCategory.cs" />
+    <Compile Include="Core\Commands\CommandHistory.cs" />
+    <Compile Include="Core\Commands\CommandProcess.cs" />
+    <Compile Include="Core\Commands\ICommand.cs" />
+    <Compile Include="Core\Configuration\AudioConfiguration.cs" />
+    <Compile Include="Core\Configuration\ConfigurationManager.cs" />
+    <Compile Include="Core\Configuration\GameConfiguration.cs" />
+    <Compile Include="Core\Configuration\GraphicsConfiguration.cs" />
+    <Compile Include="Core\Configuration\HotKeyConfiguration.cs" />
+    <Compile Include="Core\CoreEngineException.cs" />
+    <Compile Include="Core\Culture\CultureManager.cs" />
+    <Compile Include="Core\Culture\FunctionTranslation.cs" />
+    <Compile Include="Core\Culture\Language.cs" />
+    <Compile Include="Core\Culture\Translation.cs" />
+    <Compile Include="Core\Display\Resolution.cs" />
+    <Compile Include="Core\Display\ResolutionAttribute.cs" />
+    <Compile Include="Core\Display\VirtualResolutionEnum.cs" />
+    <Compile Include="Core\Input\HotKey.cs" />
+    <Compile Include="Core\Input\HotKeyManager.cs" />
+    <Compile Include="Extensions\RenderWindowExtension.cs" />
+    <Compile Include="Graphics\Gui\Containers\Container.cs" />
+    <Compile Include="Graphics\Gui\Containers\DialogBox.cs" />
+    <Compile Include="Graphics\Gui\Containers\MessageBox.cs" />
+    <Compile Include="Graphics\Gui\Containers\Panel.cs" />
+    <Compile Include="Graphics\Gui\Containers\TabControl.cs" />
+    <Compile Include="Graphics\Gui\Containers\Window.cs" />
+    <Compile Include="Graphics\Gui\Controls\Button.cs" />
+    <Compile Include="Graphics\Gui\Controls\CheckBox.cs" />
+    <Compile Include="Graphics\Gui\Controls\Control.cs" />
+    <Compile Include="Graphics\Gui\Controls\IAudioable.cs" />
+    <Compile Include="Graphics\Gui\Controls\ImageBox.cs" />
+    <Compile Include="Graphics\Gui\Controls\ITranslatable.cs" />
+    <Compile Include="Graphics\Gui\Controls\ListBox.cs" />
+    <Compile Include="Graphics\Gui\Controls\ListControl.cs" />
+    <Compile Include="Graphics\Gui\Controls\Label.cs" />
+    <Compile Include="Graphics\Gui\Controls\ListItem.cs" />
+    <Compile Include="Graphics\Gui\Controls\PasswordBox.cs" />
+    <Compile Include="Graphics\Gui\Controls\ProgressBar.cs" />
+    <Compile Include="Graphics\Gui\Controls\ScrollBar.cs" />
+    <Compile Include="Graphics\Gui\Controls\TrackBar.cs" />
+    <Compile Include="Graphics\Gui\Controls\TextBox.cs" />
+    <Compile Include="Graphics\Gui\Controls\TextControl.cs" />
+    <Compile Include="Graphics\Gui\Effects\AbstractEffect.cs" />
+    <Compile Include="Graphics\Gui\Effects\ColorEffect.cs" />
+    <Compile Include="Graphics\Gui\Effects\FadeEffect.cs" />
+    <Compile Include="Graphics\Gui\Effects\Interfaces\IColorCapable.cs" />
+    <Compile Include="Graphics\Gui\Effects\Interfaces\IEffectCapable.cs" />
+    <Compile Include="Graphics\Gui\Effects\Interfaces\IFadeCapable.cs" />
+    <Compile Include="Graphics\Gui\Effects\Interfaces\ITextColorCapable.cs" />
+    <Compile Include="Graphics\Gui\Effects\Interfaces\ITextFadeCapable.cs" />
+    <Compile Include="Graphics\Gui\Effects\TextColorEffect.cs" />
+    <Compile Include="Graphics\Gui\Effects\TextFadeEffect.cs" />
+    <Compile Include="Graphics\Gui\Enums\EffectEnum.cs" />
+    <Compile Include="Graphics\Gui\Enums\EffectSpeedEnum.cs" />
+    <Compile Include="Graphics\Gui\Enums\MessageBoxButtonEnum.cs" />
+    <Compile Include="Graphics\Gui\Enums\TextHorizontalAlignEnum.cs" />
+    <Compile Include="Graphics\Gui\Enums\TextVerticalAlignEnum.cs" />
+    <Compile Include="Graphics\Gui\GuiManager.cs" />
+    <Compile Include="Graphics\Gui\GuiShot.cs" />
+    <Compile Include="Graphics\Gui\Controls\ITextRenderable.cs" />
+    <Compile Include="Graphics\Gui\Controls\ImageButton.cs" />
+    <Compile Include="Graphics\Gui\Renderers\GuiRenderer.cs" />
+    <Compile Include="Graphics\Gui\Skin.cs" />
+    <Compile Include="Graphics\SpriteSheet.cs" />
+    <Compile Include="Graphics\SpriteSheetItem.cs" />
+    <Compile Include="GuiContext.cs" />
+    <Compile Include="Resources\Exceptions\Common.Designer.cs">
+      <DependentUpon>Common.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Exceptions\ConfigurationManager.Designer.cs">
+      <DependentUpon>ConfigurationManager.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Exceptions\ContentManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentManager.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Exceptions\CultureManager.Designer.cs">
+      <DependentUpon>CultureManager.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Director\DriectorEngineException.cs" />
+    <Compile Include="Director\Events\LoadProgressEventArgs.cs" />
+    <Compile Include="Director\Events\LoadStartedEventArgs.cs" />
+    <Compile Include="Director\Events\TransitionPositionEventArgs.cs" />
+    <Compile Include="Resources\Exceptions\Director.Designer.cs">
+      <DependentUpon>Director.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Director\Scene.cs" />
+    <Compile Include="Director\SceneManager.cs" />
+    <Compile Include="Director\Shot.cs" />
+    <Compile Include="Director\ShotManager.cs" />
+    <Compile Include="Director\ShotStateEnum.cs" />
+    <Compile Include="DrawableGameComponent.cs" />
+    <Compile Include="Graphics\GraphicsBatch.cs" />
+    <Compile Include="Graphics\Particles\Areas\Area.cs" />
+    <Compile Include="Graphics\Particles\Areas\CircleArea.cs" />
+    <Compile Include="Graphics\Particles\Areas\LineArea.cs" />
+    <Compile Include="Graphics\Particles\Behaviours\Behaviour.cs" />
+    <Compile Include="Graphics\Particles\Behaviours\Resetable.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="Graphics\Particles\Emitter.cs" />
+    <Compile Include="Graphics\Particles\Initializers\Initializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\LifeInitializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\MassInitializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\OpacityInitializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\PositionInitializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\SpeedInitializer.cs" />
+    <Compile Include="Graphics\Particles\Initializers\VelocityInitializer.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\AgeModifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\ColorModifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\MassModifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\Modifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\OpacityModifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\PositionModifier.cs" />
+    <Compile Include="Graphics\Particles\Modifiers\VelocityModifier.cs" />
+    <Compile Include="Graphics\Particles\Particle.cs" />
+    <Compile Include="Graphics\Particles\ParticleCounter.cs" />
+    <Compile Include="Graphics\Particles\Renderers\VertexRenderer.cs" />
+    <Compile Include="Graphics\Particles\Triggers\Blast.cs" />
+    <Compile Include="Graphics\Particles\Triggers\Pulse.cs" />
+    <Compile Include="Graphics\Particles\Triggers\Trigger.cs" />
+    <Compile Include="Graphics\ShapeBatch.cs" />
+    <Compile Include="Graphics\SpriteBatch.cs" />
+    <Compile Include="Graphics\Gui\GuiEngineException.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderableGame.cs" />
+    <Compile Include="Resources\Format\ContentManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentManager.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gwen\Gwen.csproj">
+      <Project>{adda2f43-96c0-497f-8216-29c67abc9806}</Project>
+      <Name>Gwen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pulsar.Framework\Pulsar.Framework.csproj">
+      <Project>{5eac41af-49b3-45f8-bf5f-8e52ac71aa57}</Project>
+      <Name>Pulsar.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pulsar.Toolkit\Pulsar.Toolkit.csproj">
+      <Project>{40a47c29-84ba-40f5-a8a0-6098fc0b9c88}</Project>
+      <Name>Pulsar.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sfml\sfml.csproj">
+      <Project>{cfb36f3a-e920-4130-a036-11c512de90fa}</Project>
+      <Name>sfml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Exceptions\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Exceptions\ConfigurationManager.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConfigurationManager.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Exceptions\ContentManager.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContentManager.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Exceptions\CultureManager.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CultureManager.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Exceptions\Director.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Director.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Format\ContentManager.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ContentManager.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Graphics\Gui\Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
